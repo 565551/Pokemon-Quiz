@@ -1,3 +1,4 @@
+using HeneGames.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -9,6 +10,9 @@ public class Movement : MonoBehaviour
     private float Vert;
     private float OldHoz;
     private float OldVert;
+	public GameObject NpcInteractingWith;
+	public DialogueManager DialogSystem;
+	public bool FreezePlayer;
 
     public float Speed;
     private Rigidbody2D RB;
@@ -45,7 +49,7 @@ public class Movement : MonoBehaviour
 
 		Vert = Input.GetAxisRaw("Vertical");
 
-		RB.velocity = new Vector2(Hoz,Vert).normalized *Speed;
+		RB. linearVelocity = new Vector2(Hoz,Vert).normalized *Speed;
 
 
     }
