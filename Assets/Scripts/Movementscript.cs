@@ -20,7 +20,7 @@ public class Movementscript : MonoBehaviour
     void FixedUpdate()
     {
         Horizontal = Input.GetAxisRaw("Horizontal");
-        RB.velocity = new Vector2(Horizontal * speed,RB.velocity.y);
+        RB.linearVelocity = new Vector2(Horizontal * speed,RB.linearVelocity.y);
         if (Horizontal < 0)
         {
             transform.GetChild(0).localScale = new Vector3(1.5f, 1.5f, 1.5f);
